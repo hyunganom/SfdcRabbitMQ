@@ -15,6 +15,7 @@ public class MessageController {
     @Autowired
     private MessageApplicationService messageApplicationService;
 
+    //클라이언트 테스트 전용 post
     @PostMapping("/send")
     public ResponseEntity<String> sendMessage(@RequestBody String content) {
         Message message = new Message(content);

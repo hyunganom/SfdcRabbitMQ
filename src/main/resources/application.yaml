@@ -1,0 +1,28 @@
+server:
+  port: 8889
+
+spring:
+  application:
+    name: sfdcmessage
+
+  rabbitmq:
+    host: localhost
+    port: 15672
+    username: guest
+    password: guest
+    queue: sfdctest
+
+  salesforce:
+    api:
+      url: ???? ???
+    access:
+      token: ????
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
